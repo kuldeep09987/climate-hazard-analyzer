@@ -62,8 +62,10 @@ def analysis(request: Request,
         raise HTTPException(422, str(e))
     except RuntimeError as e:
         raise HTTPException(502, str(e))
-    except Exception:
-        raise HTTPException(503, "Data store unavailable, try again shortly")
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
+        raise HTTPException(503, f"Backend error: {type(e).__name__}: {e}")
 
 
 @app.get("/api/export.csv")
