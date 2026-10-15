@@ -5,12 +5,15 @@ import "leaflet/dist/leaflet.css";
 import icon from "leaflet/dist/images/marker-icon.png";
 import iconShadow from "leaflet/dist/images/marker-shadow.png";
 import {
-  Chart as ChartJS, CategoryScale, LinearScale, BarElement, LineElement, PointElement, Tooltip, Legend,
+  Chart as ChartJS, CategoryScale, LinearScale, BarElement, LineElement, PointElement,
+  BarController, LineController, Tooltip, Legend,
 } from "chart.js";
 import { Chart } from "react-chartjs-2";
 import { API, get } from "./api";
-
-ChartJS.register(CategoryScale, LinearScale, BarElement, LineElement, PointElement, Tooltip, Legend);
+ChartJS.register(
+  CategoryScale, LinearScale, BarElement, LineElement, PointElement,
+  BarController, LineController, Tooltip, Legend
+);
 L.Marker.prototype.options.icon = L.icon({ iconUrl: icon, shadowUrl: iconShadow, iconAnchor: [12, 41] });
 
 const LAST_YEAR = new Date().getFullYear() - 1;
