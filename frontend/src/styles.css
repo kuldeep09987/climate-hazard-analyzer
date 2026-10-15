@@ -1,0 +1,17 @@
+body { margin: 0; font-family: system-ui, sans-serif; background: #f5f6f8; color: #1b1b1f; }
+.page { max-width: 1000px; margin: 0 auto; padding: 16px; }
+.panel { background: #fff; border-radius: 10px; padding: 16px; margin: 12px 0; box-shadow: 0 1px 3px #0001; }
+.controls { display: grid; grid-template-columns: 1.4fr 1fr; gap: 24px; }
+.row { display: flex; gap: 8px; align-items: center; margin: 8px 0; flex-wrap: wrap; }
+.small input { width: 80px; }
+input, select, button { padding: 8px; border: 1px solid #ccc; border-radius: 6px; font: inherit; }
+label { display: block; font-size: 14px; }
+.primary { background: #e4572e; color: #fff; border: none; width: 100%; margin-top: 8px; cursor: pointer; }
+.link { display: block; background: none; border: none; color: #0b57d0; cursor: pointer; text-align: left; padding: 4px 0; }
+.map { height: 320px; border-radius: 10px; }
+.muted { color: #666; font-size: 13px; }
+.error { background: #fde8e8; color: #9b1c1c; padding: 10px; border-radius: 6px; }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th, td { text-align: left; padding: 6px; border-bottom: 1px solid #eee; }
+@media (max-width: 760px) { .controls, .grid2 { grid-template-columns: 1fr; } }
