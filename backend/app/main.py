@@ -38,16 +38,7 @@ def validated(start_year: int, end_year: int):
 @app.get("/api/health")
 def health():
     return {"status": "ok"}
-@app.get("/api/debug-db")
-def debug_db():
-    import os
-    from urllib.parse import urlparse
-    raw = os.getenv("MONGO_URI", "")
-    u = urlparse(raw.strip())
-    pwd = u.password or ""
-    return {"raw_len": len(raw), "stripped_len": len(raw.strip()),
-            "user": u.username, "pwd_len": len(pwd),
-            "pwd_alnum": pwd.isalnum(), "host": u.hostname}
+
 
 @app.get("/api/geocode")
 @limiter.limit("30/minute")
