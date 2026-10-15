@@ -21,7 +21,7 @@ def get_db():
         uri = _uri()
         u = urlparse(uri)
         print(f"MONGO user={u.username!r} pwd_len={len(u.password or '')} host={u.hostname!r}", flush=True)
-        _client = MongoClient(uri, serverSelectionTimeoutMS=8000)
+        _client = MongoClient(uri, authSource="admin", serverSelectionTimeoutMS=8000)
         db = _client[name]
         db.daily.create_index([("cell", ASCENDING), ("year", ASCENDING)], unique=True)
         db.analyses.create_index("key", unique=True)
